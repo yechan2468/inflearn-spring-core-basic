@@ -1,11 +1,18 @@
 package yechan2468.inflearn_spring_core_basic.member;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import yechan2468.inflearn_spring_core_basic.AppConfig;
 
 public class MemberServiceTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
+    private MemberService memberService;
+
+    @BeforeEach
+    void beforeEach () {
+        this.memberService = new AppConfig().memberService();
+    }
 
     @Test
     void join() {

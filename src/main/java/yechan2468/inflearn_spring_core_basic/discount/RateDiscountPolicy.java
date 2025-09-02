@@ -1,11 +1,18 @@
 package yechan2468.inflearn_spring_core_basic.discount;
 
+import yechan2468.inflearn_spring_core_basic.member.Grade;
 import yechan2468.inflearn_spring_core_basic.member.Member;
 
 public class RateDiscountPolicy implements DiscountPolicy {
 
+    private final int discountPercent = 10;
+
     @Override
     public int getDiscountAmount(Member member, int price) {
-        return 0;
+        if (member.getGrade() == Grade.VIP) {
+            return price * discountPercent / 100;
+        } else {
+            return 0;
+        }
     }
 }

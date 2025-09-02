@@ -1,15 +1,18 @@
 package yechan2468.inflearn_spring_core_basic.order;
 
-import yechan2468.inflearn_spring_core_basic.discount.AmountDiscountPolicy;
 import yechan2468.inflearn_spring_core_basic.discount.DiscountPolicy;
 import yechan2468.inflearn_spring_core_basic.member.Member;
 import yechan2468.inflearn_spring_core_basic.member.MemberRepository;
-import yechan2468.inflearn_spring_core_basic.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new AmountDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
