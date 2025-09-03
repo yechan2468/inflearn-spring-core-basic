@@ -1,8 +1,10 @@
 package yechan2468.inflearn_spring_core_basic.discount;
 
+import org.springframework.stereotype.Component;
 import yechan2468.inflearn_spring_core_basic.member.Grade;
 import yechan2468.inflearn_spring_core_basic.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private final int discountPercent = 10;
