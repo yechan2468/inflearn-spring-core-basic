@@ -19,11 +19,18 @@ repositories {
 }
 
 dependencies {
+    // spring boot
 	implementation 'org.springframework.boot:spring-boot-starter'
+
+    // spring boot
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
+    // junit
 	useJUnitPlatform()
+
+    // mockito
+    jvmArgs "-javaagent:${classpath.find { it.name.contains('byte-buddy-agent') }.absolutePath}"
 }
