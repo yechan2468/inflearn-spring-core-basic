@@ -1,10 +1,11 @@
 package yechan2468.inflearn_spring_core_basic.singleton;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import yechan2468.inflearn_spring_core_basic.AppConfig;
 import yechan2468.inflearn_spring_core_basic.member.MemberService;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SingletonContainerTest {
 
@@ -16,6 +17,15 @@ public class SingletonContainerTest {
         MemberService memberService1 = appConfig.memberService();
         MemberService memberService2 = appConfig.memberService();
 
-        Assertions.assertThat(memberService1).isNotSameAs(memberService2);
+        assertThat(memberService1).isNotSameAs(memberService2);
+    }
+
+    @Test
+    @DisplayName("싱글톤 패턴을 사용한 객체 사용")
+    void singletonServiceTest() {
+        SingletonService singletonService1 = SingletonService.getInstance();
+        SingletonService singletonService2 = SingletonService.getInstance();
+
+        assertThat(singletonService1).isSameAs(singletonService2);
     }
 }
