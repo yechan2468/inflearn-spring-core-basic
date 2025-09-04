@@ -1,4 +1,4 @@
-package yechan2468.inflearn_spring_core_basic.componentscan;
+package yechan2468.inflearn_spring_core_basic.componentscan.scan;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
