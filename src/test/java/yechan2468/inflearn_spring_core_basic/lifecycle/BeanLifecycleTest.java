@@ -29,7 +29,7 @@ public class BeanLifecycleTest {
     @Configuration(proxyBeanMethods = false) // proxyBeanMethods: 버전차로 인한 오류로 인해 넣어줌
     private static class LifecycleTestConfig {
 
-        @Bean
+        @Bean(initMethod = "init", destroyMethod = "close")
         public DummyNetworkClient dummyNetworkClient() {
             DummyNetworkClient dummyNetworkClient = new DummyNetworkClient();
             dummyNetworkClient.setUrl("http://test.com");
