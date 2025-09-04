@@ -1,13 +1,15 @@
 package yechan2468.inflearn_spring_core_basic.lifecycle;
 
-public class DummyNetworkClient {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class DummyNetworkClient implements InitializingBean, DisposableBean {
 
     private String url;
 
     public DummyNetworkClient() {
         System.out.println("Constructor: url = " + url);
-        connect();
-        send("초기화");
+
     }
 
     public void setUrl(String url) {
@@ -24,5 +26,16 @@ public class DummyNetworkClient {
 
     public void disconnect() {
         System.out.println("disconnect: " + url);
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        connect();
+        send("초기 연결");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        disconnect();
     }
 }

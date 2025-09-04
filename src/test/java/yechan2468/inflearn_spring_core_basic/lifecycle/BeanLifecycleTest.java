@@ -21,8 +21,9 @@ public class BeanLifecycleTest {
     }
     /*
     Constructor: url = null
-    connect: null
-    send: null msg: 초기화
+    connect: http://test.com
+    send: http://test.com msg: 초기 연결
+    disconnect: http://test.com
      */
 
     @Configuration(proxyBeanMethods = false) // proxyBeanMethods: 버전차로 인한 오류로 인해 넣어줌
