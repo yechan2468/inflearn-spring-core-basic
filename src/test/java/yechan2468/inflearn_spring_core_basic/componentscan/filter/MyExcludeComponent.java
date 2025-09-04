@@ -1,4 +1,4 @@
-package yechan2468.inflearn_spring_core_basic.componentscan.scan;
+package yechan2468.inflearn_spring_core_basic.componentscan.filter;
 
 import java.lang.annotation.*;
 
