@@ -1,10 +1,10 @@
-package yechan2468.inflearn_spring_core_basic.componentscan;
+package yechan2468.inflearn_spring_core_basic.componentscan.scan;
 
 import java.lang.annotation.*;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface MyExcludeComponent {
+public @interface MyIncludeComponent {
 
 }
