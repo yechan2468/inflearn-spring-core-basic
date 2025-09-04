@@ -28,10 +28,14 @@ configurations {
 dependencies {
     // spring boot
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // spring boot
+
+    // junit
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // junit
 
     // lombok
     compileOnly 'org.projectlombok:lombok'
