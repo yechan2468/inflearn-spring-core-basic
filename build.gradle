@@ -40,6 +40,10 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
     // lombok
+
+    // JSR-330 provider
+    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+    // JSR-330 provider
 }
 
 
