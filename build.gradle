@@ -18,14 +18,30 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+    compileOnly {
+        // lombok
+        extendsFrom annotationProcessor
+        // lombok
+    }
+}
 dependencies {
     // spring boot
-	implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter'
 
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // spring boot
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    // lombok
 }
+
 
 tasks.named('test') {
     // junit
